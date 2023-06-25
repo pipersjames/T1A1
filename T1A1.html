@@ -1,0 +1,612 @@
+<!DOCTYPE html><html><head>
+      <title>T1A1</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////home/james/.vscode-server/extensions/shd101wyy.markdown-preview-enhanced-0.6.8/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="term-1-assignment-1">Term 1 Assignment 1</h1>
+
+<h3 class="mume-header" id="q1-identify-and-explain-common-and-important-components-and-concepts-of-web-development-markup-languages">Q1 Identify and explain common and important components and concepts of web development markup languages.</h3>
+
+<hr>
+<h4 class="mume-header" id="q1-answer">Q1 Answer</h4>
+
+<p>Markup languages are used to communicate the structure, formatting and relational interactions of a document to facilitate automatic processing by the program that reads it. Typically a markup language finishes with the &quot;ML&quot; to show that is such. In the case of web development we are primarily concerned with <strong>HTML</strong> (Hypertext Markup Language) as it provides the structure behind webpages. Alongside this markup language  <strong>CSS</strong> (style/appearance), and <strong>JavaScript</strong> (fuctionality/interactivity) are crucial tools in the webdevelopment process that support the HTML. This is because HTML acts more like a skeletal structure or barebones that a web browser will review first to see if the page is viable before applying styling or graphical elements. Other Markup languages related to the web include XML (used for more for describing data rather than structure) and XHTML (combination of XML and HTML).</p>
+<p>Below are some key components and concepts of HTML, CSS.</p>
+<ol>
+<li>HTML</li>
+</ol>
+<ul>
+<li>Elements: define different substructures of the webpage and written inbetween tags requiring both a start and end tag e.g. <code>&lt;p&gt;&lt;/p&gt;</code>. At minimum the webpage should include elements for the document type, the document itself, header and body to be functional e.g. of tags <code>!DOCTYPE, html, head, body</code>. Additional elements could include but are not limited to paragraphs, lists, tables, links or pictures. see [<a href="https://www.w3schools.com/html/">https://www.w3schools.com/html/</a>].</li>
+<li>Attributes: provide additional information about an element and are specified inside of the start tag. For example the lang=&quot;en&quot; inside of the following code block is an attribute to set the language for the html as english <code>&lt;html lang=&quot;en&quot;&gt;</code></li>
+</ul>
+<ol start="2">
+<li>CSS</li>
+</ol>
+<ul>
+<li>Rulesets: are the core written structure of the CSS used to modify elements, classes, ID etc. of the html. They can either be written inside of the HTML document(inline styling) or in an external CSS file (external styling). Rulesets include both a selector, and declaration.</li>
+<li>selectors: will target the elements, classes or ID&apos;s of the HTML code base and apply style to them.</li>
+<li>Declarations: include both the property and property value. Together they represents what part of the selector will be changed and how it will changed.</li>
+<li>cascading or specificity: It is important to note that CSS styles html in a hierarchical way, meaning that certain types of formatting will overwrite others if there is a conflict. For example, a style change to the &quot;ID&quot; will take priority over a &quot;Class&quot; style.</li>
+</ul>
+<ol start="3">
+<li>JavaScript</li>
+</ol>
+<ul>
+<li>
+<p>functions: Reusable code blocks that perform a task, typically loaded with previously assigned variables and operators of different types they will receive an input and return values to be acted up later.</p>
+</li>
+<li>
+<p>DOM manipulation: Javascript will let you access and change the document object model, basically the structure of the markup language document. modifications to the elements attributes etc can be affected this way to make the webpage more dynamic.</p>
+</li>
+</ul>
+<hr>
+<h3 class="mume-header" id="q2-define-the-features-of-the-following-technologies-that-are-essential-in-terms-of-the-development-of-the-internet">Q2 Define the features of the following technologies that are essential in terms of the development of the internet:</h3>
+
+<ul>
+<li>packets</li>
+<li>IP addresses (IPv4 and IPv6)</li>
+<li>routers and routing</li>
+<li>domains and DNS</li>
+</ul>
+<p>Explain how each technology has contributed to the development of the internet.</p>
+<hr>
+<h4 class="mume-header" id="q2-answer">Q2 Answer</h4>
+
+<ol>
+<li>
+<p>Packets - Smaller components of a larger message send over internet protocol. They are designed to smooth over data transfer when multiple users using the network at the same time. otherwise 1 user would have to wait for another to complete the data transfer before another can begin. The decentralization of data transfer is one of the main reasons why packets took off and eventually won out over other systems as it allowed more contigencies incase of transfer failure. The use of a packet header allows for reconstruction of the data once it reaches it&apos;s destination and a packet can have multiple of these.  Of particular importance to the packet is the IP address header which provide the address for which the packet needs to reach.</p>
+</li>
+<li>
+<p>IP addresses - This is an address for a computer/device accessing the internet. within a local environment your device is asssigned an IP aswell as globally by your Internet service provider once it accesses the internet. Sometimes a Static IP is needed and is often obtained by large companies looking to host their own server and provide a consistant domain for people to access. IPv4 and IPv6 are two versions used to address different sites. version 4 has 32 bits of information, contains less memory and is already supported by millions of devices. In 1999 version 6 started to become more prevalant over a concern that demand for new IP addresses would not meet the supply. It is 128 bits of information but it also provides a number of security benifits that IPv4 doesn&apos;t.</p>
+</li>
+<li>
+<p>Routers act as the nodal points for data transfer and will look for the best route to send the data. The process of selecting this pathway for the packets is called routing. Sometimes the packets may need to jump through different networks and the router will consult a routing table to do this before wrapping it in the IP header and pushing it off to it&apos;s destination. By being able to handle link faluire and re-route packets when networks are down is one of the main reason why their impact is so strong on the development direction of the internet. Due to the size, price and effeciciency of the router it was also easily scalable to increase the size of the internet.</p>
+</li>
+<li>
+<p>To connect directly through an IP address is a tad cumbersome on human compacity so the Domain Name system(DNS) helps to resolve that. It acts like a phone book linking a name to an IP address. It operates hierarchically having the larger domain names at the top scaling down to the smaller sub-domains. Typically once a domain has been found this data is stored locally referenced first in future instances before going to the DNS to find the location of the domain. The DNS makes it human-friendly for accessing different pages and hence why it was taken up as a mainstay in the current internet model.</p>
+</li>
+</ol>
+<hr>
+<h3 class="mume-header" id="q3-define-the-features-of-the-following-technologies-that-are-essential-in-terms-of-the-development-of-the-internet">Q3 Define the features of the following technologies that are essential in terms of the development of the internet:</h3>
+
+<ul>
+<li>TCP</li>
+<li>HTTP and HTTPS</li>
+<li>web browsers (requests, rendering and developer tools)</li>
+</ul>
+<p>Explain how each technology has contributed to the development of client and server communication over the internet (50 - 150 words for each technology)</p>
+<hr>
+<h4 class="mume-header" id="q3-answer">Q3 Answer</h4>
+
+<ol>
+<li>TCP or Transmission Control Protocol is one of the many tranport systems for data across the internet. TCP however unlike the others originated with the the orginal network implementation to compliment IP. It acts by relaying information back and forth to the server to  ensure that all data is retrieved and free of error. note that this connection must be established before data is sent. Once the data transfer is complete tt will then pieced back together in order. This protocol was opted for due to it&apos;s reliability.</li>
+<li>After data is retrieved the hypertext transmission protocol works to read and process that data. It runs over the transfer stack as a application layer and works by loading webpages via hypertext links. it also relays information back to the server upon request that could be confidential information like bank account , social security or emails. To provide security to this layer of transmission, TLS was added to encrypt the communication layer thus becoming HTTPS. That way if someone was to intercept your data transfer the information they would receive would be nonsensical rather than easy to read characters.</li>
+<li>The web browser uses the HTTP protocol to retrieve information from the web and display it for the user. Shifts in what web browser domminated the market was often due to ease of access, speed what kinds of content it could show. More modern web browswers handle better HTML, CSS and Java for more well designed websites. Web browsers also store information about what is travelled to, site preferences, login creditionals etc. This data storage is called cookies and is designed to make the experience of browsing the internet an overall smoother and easy time.<br>
+These three technologies revolutionized the way information is communicated between client and server enabling widespread availability of web-based services.</li>
+</ol>
+<hr>
+<h3 class="mume-header" id="q4-identify-three-data-structures-used-in-the-python-programming-language-and-explain-the-reasons-for-using-each">Q4 Identify THREE data structures used in the Python programming language and explain the reasons for using each.</h3>
+
+<hr>
+<h4 class="mume-header" id="q4-answer">Q4 Answer</h4>
+
+<ol>
+<li>lists - they are a very flexable grouping of data used in python. They are mutable, ordered and and can contain multiple instances of the same variable. They can also contain other data structures within. They see common use to the versitality of use.</li>
+<li>tuples - similiar to lists, in that they are both ordered and can contain multiple instances of the same variable. Tuples are not mutable however meaning once defined that&apos;s it! typically used in the case of things that should not change. birthdays, names of the week etc.</li>
+<li>dictionaries - ordered, changeable and don&apos;t allow any duplicates. dictionaries hold entries with both a key and a value separated by a colon. You must call the key to interect with the value. They are functionally similiar to a real world dictionary in that they provide meaning to collection of values.</li>
+</ol>
+<hr>
+<h3 class="mume-header" id="q5-describe-the-features-of-interpreters-and-compilers-and-how-they-are-different">Q5 Describe the features of interpreters and compilers and how they are different.</h3>
+
+<hr>
+<h4 class="mume-header" id="q5-answer">Q5 Answer</h4>
+
+<p>Interpreters excecute code line by line in real-time. They don&apos;t require an excecutionable file and provide immediate feedback for errors. where they fall down is in their slower excecution speeds. The code is essentially translated 1 line at a time into machine language to comunicate with the computer that then excucutes the code and provides feedback.</p>
+<p>Complilers on the other hand will translate the entire code before running. this makes the running of the code smoother provides less support for error handling. Typically you would expect that an interpreter would be used in favour of a compiler during the development phase but this isn&apos;t always the case. It largely depends on the overall performance needs and the programming language being used.</p>
+<hr>
+<h3 class="mume-header" id="q6-identify-two-commonly-used-programming-languages-and-explain-the-benefits-and-drawbacks-of-each">Q6 Identify TWO commonly used programming languages and explain the benefits and drawbacks of each.</h3>
+
+<hr>
+<h4 class="mume-header" id="q6-answer">Q6 Answer</h4>
+
+<p>Python - was designed to be simple and easy to encourage new user development. This has allowed an extensive library of modules and functions to be developed to help support it&apos;s use. Due to this simplicity the development cycle is also quicker than most. It also as strong support and compatablity across different user platforms. The community support of python is of high abundance too so if you encounter a problem there is usually a source on the internet to find an answer.<br>
+There are some drawbacks though - because it is an interpreted language it can be a bit slower than a compiled language like Java. It can consume a larger amount of memory compared to other programs. With consistant updates and changes version compatability can also become an issue for concern.</p>
+<p>Java - wants to be platform independent meaning that that it is very good for running on different platforms and has become the primary language for web development. being an object-orientated language the layout is often well organised. It also has a large library of built-in functionality for developers to draw upon. It also offers automatic memory management so that developers don&apos;t need to manage it manually.<br>
+Drawbacks of this language include the learning curve being a little more difficult than other languages for entry. sometimes the code will be a bit lengthier to excute functionality. Also because it is runs in a virtual environment (JVM) the performance can be a bit slower than other languages.</p>
+<hr>
+<h3 class="mume-header" id="q7-identify-two-ethical-issues-from-the-areas-below-and-discuss-the-extent-to-which-an-it-professional-is-ethically-responsible-in-terms-of-the-issue">Q7 Identify TWO ethical issues from the areas below and discuss the extent to which an IT professional is ethically responsible in terms of the issue.==</h3>
+
+<p>List of topics containing ethical issues:</p>
+<ul>
+<li>access to a user&#x2019;s personal information (medical, family, financial, personal attributes such as sexuality, religion, or beliefs)</li>
+<li>intellectual property, copyright, and acknowledgement.</li>
+<li>criminal acts such as theft, fraud, trafficking and distribution of prohibited substances, terrorism</li>
+<li>GPS tracking data and other types of metadata, MAC addresses, hardware fingerprints</li>
+<li>freedom of thought, conscience, speech and the media</li>
+<li>aggressive sales and marketing practices designed to mislead and deceive consumers</li>
+<li>trading of shares on the stock exchange OR crypto-currencies</li>
+</ul>
+<p>For each ethical issue identify a source of legal information relating to the ethical issue and discuss whether the law is helpful in assisting a developer to act in an ethical way. (Word count guide: 200 words max)</p>
+<p>Conduct research into a case study of ONE of the ethical issues you have chosen discuss how an ethical IT professional should respond to the case study and how they might mitigate or prevent ethical breaches. (Word count guide: 400 - 600 words)</p>
+<hr>
+<h4 class="mume-header" id="q7-answer">Q7 Answer</h4>
+
+<ol>
+<li>intellectual property, copyright, and acknowledgement.<br>
+An IT profeesional is responsible to ensure that they are up to date with current copyright law. Obtain proper licences or permission when using third-party intellectual property. Avoid plagerism when making new content. Inform the user to the copyright laws surrounding their content. If you become aware of plagerism you should report it to the proper authority. The below website provides information on Australian Intellectual Property laws. It provides an outlet to understand various copyright and design protections. It also lets a developer look at designs that have already been registered in order to avoid a case of plagerism.</li>
+</ol>
+<p><a href="https://www.globalaustralia.gov.au/news-and-resources/guide-to-investing/running-a-business/understanding-australian-business-regulation/australian-intellectual-property-laws">https://www.globalaustralia.gov.au/news-and-resources/guide-to-investing/running-a-business/understanding-australian-business-regulation/australian-intellectual-property-laws</a></p>
+<p>In &quot;A prelimanary mode of insider theft of intellectual property&quot; we learn about 48 cases to which individuals have entered companies with the goal of stealing confidential information from the org. The position put foward by the article seeks to demonstate the why of the theft and propose strategy to mitigate.</p>
+<p>By taking into account the choices made by some of these theives control measures could be put into place to prevent occurances from happening. For example we learn that in independant cases dissatifaction from denial of a request played a role in 33% of cases. After a period of time operating in an org. working on a project team members can develop an entitlement to work produced resulting in the decision to take it. An IP agreement although protecting in cases where this happens does not seem to stop it from happening. By striving to keep employee satisfaction high the amount of cases could be mitigaged in the long-term. It also looks like keeping an employee moving between projects could reduce the entitlement factor making it less likely to happen.</p>
+<p>In times when the decision to steal is pre-meditated to get ahead in the industry we see a new type of model called the &quot;Ambitious Leader&quot;. The motivations of this type of thief lie with the promise of greater rewards. Early onset stages of preparation could include the creation of a side business. Co-ordination with competing organisations or collecting information in advance. It could also be pointed out that over half of all cases downloaded or tranfered information outside of the org within 1 month of quiting. Siting these methods it would be optimal to keep an eye on individuals behavioural pattern that exhibit a similiar trend.</p>
+<p>One of the larger difficulties associated with the crime is that if the thief chooses not to use the information it can often go unnoticed. It is recommended that It departments use technical monitering to look out for large data transfers or suspicious activity to mitigate the damages from this type of information theft.</p>
+<p>Reference to Article</p>
+<p>Moore, A. P., Cappelli, D., Caron, T. C., Shaw, E. D., Spooner, D., &amp; Trzeciak, R. F. (2011). A preliminary model of insider theft of intellectual property.</p>
+<ol start="2">
+<li>trading of shares on the stock exchange OR crypto-currencies</li>
+</ol>
+<p>When dealing with trading stocks and shares an IT professional must be transparent and provide accurate data to clients, traders and investors. In doing this it is also important that the platform is following the guidlines and laws that are in place for trading.The Client needs to have a good amount of security set in place for their trading account that include ensuring that bank information is safe from prying eyes and that unauthorized trades won&apos;t happen through their account. In the case where an It professional engages directly in trades or helps with the process by provided algorithmic material, it is important that these aren&apos;t malicious or manipulative in nature toward the market. When it comes to the regulation crytpo currency for example a link like the below is helpful to understand the underlying requirements and do and do nots. It seems that each country seems to regulate the situation differently and this could become convoluted without a central governing body.</p>
+<p><a href="https://asic.gov.au/regulatory-resources/digital-transformation/crypto-assets/">https://asic.gov.au/regulatory-resources/digital-transformation/crypto-assets/</a></p>
+<hr>
+<h3 class="mume-header" id="q8-explain-control-flow-using-examples-from-the-python-programming-language">Q8 Explain control flow, using examples from the Python programming language.</h3>
+
+<hr>
+<h4 class="mume-header" id="q8-answer">Q8 Answer</h4>
+
+<p>It determines how the program flows from one excacution to another. By using control flow methods in python the programmer is able to allow the program itself to determine whether it should take action and how many times it should do so.</p>
+<p>For example the below if statement takes effect if the information passed through it is greater than 5, but the program will simply pass if it doesn&apos;t meet the condition.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>if a_condition &gt; 5:
+    a_condition += 1
+else: 
+    pass
+</code></pre><p>Using a loop for control flow will allow for multiple iterations of the condition until we are satisfied that it is complete. the below example will add 1 to a ten times.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>a = 0
+for i in range(10):
+    a += 1
+</code></pre><p>Control flow can also be used for catching and handling errors that may appear in the code. the below catches a division by 0 error and returns 0 instead.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>try:
+    a = 5/n
+except ZeroDivisionError:
+    a = 0
+
+</code></pre><hr>
+<h3 class="mume-header" id="q9-explain-the-difference-between-type-coercion-and-type-conversion-are-either-of-these-used-in-python">Q9 Explain the difference between type coercion and type conversion. Are either of these used in Python?</h3>
+
+<hr>
+<h4 class="mume-header" id="q9-answer">Q9 Answer</h4>
+
+<p>Both type coercion and type conversion is the process of changing one data type to another. The difference lies within how and when the type change occurs.</p>
+<p>Type coercion happens when the programming language itself identifies when a change needs to happen to make the code compatible and makes it without consent. The classic case of this in python is the interaction between integers and floats. eg. 5 + 5.1 = 10.1. Python has assumed the a change requirement to convert the first 5 to a float so that the sum can be completed.</p>
+<p>Type conversion however requires the user to explicitly define that a change to the data type needs to occur. Python has a range of built in functions to accomodate this process eg. int(),bool(),str() etc.</p>
+<p>So yes, both are used in Python.</p>
+<hr>
+<h3 class="mume-header" id="q10-explain-data-types-using-examples">Q10 Explain data types, using examples.</h3>
+
+<hr>
+<h4 class="mume-header" id="q10-answer">Q10 Answer</h4>
+
+<p>Data types represent the kind of value that is being used. The data type will impact whether or not an action can be performed, how the action is performed or if the data can be stored in a specific variable.</p>
+<p>Strings for example typically represent text values and are enclosed by quoatation marks eg &quot;Hello&quot;. By adding strings together it will join them back to back &quot;Hello&quot; + &quot;Hello&quot; = &quot;HelloHello&quot;.</p>
+<p>Integers are whole numbers without a fractional part. eg. 5,6,25. If you pass an integer through a print function with converting it the program will fail. This is because print is a String type function.</p>
+<p>Floats like integers are a representation of numbers but they include a decimal part. eg. 5.0,6.1,25.4567.</p>
+<p>None is a special data type the represent the absence of value. when operating with functions it is common to see a null type when you forget to return a value from the function. for example if you input the below line of code into python you will receive a class noneType as a result.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>def test():
+    c = 1 + 2
+
+print(type(test()))
+</code></pre><p>Booleans have only two possible values, True or False. typically used in the process making decisions.</p>
+<hr>
+<h3 class="mume-header" id="q11-heres-the-problem-there-is-a-restaurant-serving-a-variety-of-food-the-customers-want-to-be-able-to-buy-food-of-their-choice-all-the-staff-just-quit-how-can-you-build-an-app-to-replace-them">Q11 Here&#x2019;s the problem: &#x201C;There is a restaurant serving a variety of food. The customers want to be able to buy food of their choice. All the staff just quit, how can you build an app to replace them?&#x201D;</h3>
+
+<ul>
+<li>Identify the classes you would use to solve the problem</li>
+<li>Write a short explanation of why you would use the classes you have identified</li>
+</ul>
+<hr>
+<h4 class="mume-header" id="q11-answer">Q11 Answer</h4>
+
+<p>An overall class to represent the Restuaurant itself as an entity. Used to encapsulate functionality and behaviour that can be bled down to sub-classes. could aslo define location, name of the resturant.</p>
+<p>A class for Food. This class would list out the food items that customer could want. Should include a price for each item, what the item is, if it&apos;s vegan, vegetarian, meat if it has sides etc.</p>
+<p>A class for the order. should have an attribute to include the customer name, what table they are on, the food item they ordered, when they ordered etc.</p>
+<p>A class for the application, so that the flow of orders can be managed as well as user input adjusted etc.<br>
+A class for the menu, so that the food items can be managed.</p>
+<p>The Food and Order classes represent the items the customers want but we also need classes that manage these items. That&apos;s were classes like the restaurant, application and menu classes come in clutch to provide a framework for operation. we could also add additional classes depending on the specificity on which we want to operate including classes for the tables, payments and methods of pay, kitchen operation etc.</p>
+<hr>
+<h3>Q12 	Identify and explain the error in the code snippet below that is preventing correct execution of the program.</h3>
+<hr>
+<h4 class="mume-header" id="q12-answer">Q12 Answer</h4>
+
+<p>In the line 3 of the code the celsius variable won&apos;t divide by 5 after it is multiplied by 9. This is because the input is always taken as a string. to fix the code you need to convert the input to an integer in line 1.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>celsius = int(input())
+
+fahrenheit = (celsius*9/5)+32
+
+print(f&quot;the result is: {fahrenheit}.&quot;)
+</code></pre><hr>
+<h3>Q13 The code snippet below looks for the first two elements that are out of order and swaps them; however, it is not producing the correct results. Rewrite the code so that it works correctly.</h3>
+<hr>
+<h4 class="mume-header" id="q13-answer">Q13 Answer</h4>
+
+<pre data-role="codeBlock" data-info class="language-"><code>numbers = [5,22,29,39,19,541,78,96,84]
+
+i = 0
+
+while (i &lt; len(numbers) -1):
+   if numbers[i] &lt; numbers[i+1]:
+       i += 1
+   else:
+       numbers[i], numbers[i+1] = numbers[i+1], numbers[i]
+       break
+print(i)
+
+</code></pre><hr>
+<h3>Q14 Demonstrate your algorithmic thinking through completing the following two tasks, in order:</h3>
+<ol>
+<li>Create a flowchart to outline the steps for listing all prime numbers between 1 and 100 (inclusive). Your flowchart should make use of standard conventions for flowcharts to indicate processes, tasks, actions, or operations</li>
+<li>Write pseudocode for the process outlined in your flowchart</li>
+</ol>
+<hr>
+<h4>Q14 Answer</h4>
+<p><img src="./q14%20image.png" alt="flowchart image"></p>
+<p>Start</p>
+<ol>
+<li>For each number in in range 1 to 101 - Check to see if prime</li>
+<li>If yes add to list otherwise proceed to next number</li>
+<li>when all numbers have been checked print list of numbers</li>
+</ol>
+<p>End</p>
+<hr>
+<h3>Q15 Write pseudocode OR Python code for the following problem:</h3>
+<p>You have access to two variables: raining (boolean) and temperature (integer). If it&#x2019;s raining and the temperature is less than 15 degrees, print to the screen &#x201C;It&#x2019;s wet and cold&#x201D;, if it is less than 15 but not raining print &#x201C;It&#x2019;s not raining but cold&#x201D;. If it&#x2019;s greater than or equal to 15 but not raining print &#x201C;It&#x2019;s warm but not raining&#x201D;, and otherwise tell them &#x201C;It&#x2019;s warm and raining&#x201D;.</p>
+<hr>
+<h4>Q15 Answer</h4>
+<pre data-role="codeBlock" data-info class="language-"><code>raining = False
+temperature = 18
+
+if  temperature &lt; 15 and raining == True:
+    print(&quot;It&apos;s wet and cold&quot;)
+elif temperature &lt; 15 and raining != True:
+    print(&quot;It&apos;s not raining but cold&quot;)
+elif temperature &gt;= 15 and raining != True:
+    print(&quot;It&apos;s not raining but cold&quot;)
+else:
+    print(&quot;It&apos;s warm and raining&quot;)
+</code></pre><hr>
+<h3>Q16 ACME Corporation are hiring a new junior developer, as part of their hiring criteria they&apos;ve created a &quot;coding skill score&quot; based on the specific competencies they require for this role; the more important the skill is for ACME corp, the more points it contributes to the &quot;coding skill score&quot; The skills are weighted as follows:</h3>
+<ul>
+<li>Python (1)</li>
+<li>Ruby (2)</li>
+<li>Bash (4)</li>
+<li>Git (8)</li>
+<li>HTML (16)</li>
+<li>TDD (32)</li>
+<li>CSS (64)</li>
+<li>JavaScript (128)<br>
+&#x200B;<br>
+Write a program that allows a user to input their skills and then tells them<br>
+a) Their overall &quot;coding skill score&quot;<br>
+b) Skills they may want to learn, and how much each one would improve their score</li>
+</ul>
+<hr>
+<h4>Q16 Answer</h4>
+<pre data-role="codeBlock" data-info class="language-"><code>#define a dictionary for each of the skills
+skill_scores = {
+   &quot;python&quot; : 1,
+   &quot;ruby&quot; : 2,
+   &quot;bash&quot; : 4,
+   &quot;git&quot; : 8,
+   &quot;html&quot; : 16,
+   &quot;tdd&quot; : 32,
+   &quot;css&quot; : 64,
+   &quot;javascript&quot; : 128
+}
+
+# empty set to take in user input
+user_skills = set()
+
+# take list of skills input from the user
+def get_user_skills():
+    while True:
+           user_skill = input(&quot;Enter a computing skills that you possess (type &apos;done&apos; when you finished): &quot;).lower()
+           if user_skill != &quot;done&quot;:
+               user_skills.add(user_skill)
+           else:
+               return user_skills
+               
+# provide a score based on the input
+def score():
+   overall_score = 0
+   for i in user_skills:
+       if i in skill_scores:
+           overall_score += skill_scores[i]
+   return overall_score
+
+# list out the skills and the points for each of them.
+def find_skills_not_learnt():
+   for key in user_skills:
+       if key in skill_scores:
+           del skill_scores[key]
+   return skill_scores
+
+# run user input function
+get_user_skills()
+
+# print information to the user
+print(&quot;----------------------------------------&quot;)
+print(f&quot;Your overall coding score is {score()} points&quot;)
+print(&quot;----------------------------------------&quot;)
+print(f&quot;You may want to learn the following skills to improve your score.&quot;)
+print(find_skills_not_learnt())
+
+</code></pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
